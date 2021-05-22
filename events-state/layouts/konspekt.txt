@@ -1,0 +1,11 @@
+1. компонент Store (хранит список товаров в атрибуте products)
+   передает в IconSwitch: - icon(либо view_list, либо view_modul)
+                          - onSwitch() - обработчик события
+  пример:                        
+  <IconSwitch icon={"view_list"} onSwitch={() => console.log("change state here")}/>
+
+2. компонент IconSwitch - Иконка разметки
+3. компоненты CardsView и ListView - товары отображаются
+4. карточка товара - ShopCard 
+   CardsView отображает много карточек ShopCard. На один товар - одна карточка.
+5. ShopItem - товар в списке ListView.
