@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import ProjectList from "./ProjectList";
 import Toolbar from "./Toolbar";
 
@@ -74,31 +74,26 @@ const projects = [
 ];
 
 function Portfolio() {
+  let [category, changeCat] = useState('All');
+
+  function setFilter(filter) {
+    changeCat(category = filter)
+  }
+
   return (
     <>
       <Toolbar
         filters={["All", "Websites", "Flayers", "Business Cards"]}
-        selected="All"
-        nSelectFilter={(filter) => {
-          console.log(filter);
+        selected={category}
+        onSelectFilter={(filter) => {
+          setFilter(filter);
         }}
       />
       <div className="Portfolio">
-        <ProjectList projects={projects} />
+        <ProjectList projects={category === 'All' ? projects : projects.filter((elem) => elem.category === category)} />
       </div>
     </>
   );
 }
 
 export default Portfolio;
-
-/* 
-Установить состояние выбранного фильтра 
-в обработчике события ?
-который Portfolio передает 
-в свойство onSelectFilter 
-компонента Toolbar
-
-в класс Portfolio необходимо добавить состояние (state). 
-
-*/

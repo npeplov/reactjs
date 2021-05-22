@@ -1,8 +1,7 @@
 .App {
-  max-width: 970px;
+  max-width: 1024px;
   margin: 0 auto;
   padding: 20px;
-  /* border: 1px solid #000; */
 }
 
 .Portfolio {
@@ -10,16 +9,13 @@
 }
 
 .Portfolio div {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-content: space-between;
-  justify-content: space-between;
-  align-items: flex-start;
+  column-count: 3;
+  column-gap: 15px;
 }
 
 .Portfolio img {
-  padding: 5px 0;
+  width: 100%;
+  padding-top: 10px;
 }
 
 .Toolbar {

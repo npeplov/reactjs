@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function ProjectList(props) {
-  const { projects } = props;
+function ProjectList({projects, category}) {
   return (
     <div>
-      {projects.map((item, ind) => (
-        <img key={ind} src={item.img} alt="" />
-      ))}
+      {projects.map((item, ind) => {
+        return  (
+          <img key={ind} src={item.img} alt="" />
+        );
+      })}
     </div>
   );
 }
