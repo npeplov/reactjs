@@ -1,3 +1,5 @@
+const shortid = require('shortid');
+
 const products = [{
   name: "Nike Metcon 2",
   price: "130",
@@ -30,4 +32,9 @@ const products = [{
   img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/layouts/img/5.jpg"
 }];
 
-export default products;
+const prodWKey = products.map((item) => {
+  item.id = shortid.generate();
+  return item;
+})
+
+export default prodWKey;

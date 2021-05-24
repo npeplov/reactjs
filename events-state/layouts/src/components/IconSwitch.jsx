@@ -1,10 +1,9 @@
 import React from "react";
 
-export default function IconSwitch() {
+export default function IconSwitch({icon, onSwitch}) {
   return (
-    <div>
-      <span className="material-icons">view_list</span>
-      <span className="material-icons">view_module</span>
+    <div className='IconSwitch'>
+      <span onClick={() => onSwitch(icon)} className="material-icons">{icon}</span>
     </div>
   );
 }
