@@ -13,9 +13,9 @@ export default function Card({ item, MainImage }) {
   }
 
   function quantityLevel(quantity) {
-    if (quantity <= 10) return 'item-quantity level-low';
-    if (quantity <= 20) return 'item-quantity level-medium';
-    return 'item-quantity level-high';
+    if (quantity <= 10) return 'level-low';
+    if (quantity <= 20) return 'level-medium';
+    return 'level-high';
   }
 
   return (
@@ -30,7 +30,7 @@ export default function Card({ item, MainImage }) {
         <p className="item-price">
           {currencySymbol(item.currency_code)}{item.price}
         </p>
-        <p className={quantityLevel(item.quantity)}>{item.quantity}</p>
+        <p className={"item-quantity " + quantityLevel(item.quantity)}>{item.quantity}</p>
       </div>
     </div>
   );
