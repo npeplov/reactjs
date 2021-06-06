@@ -1,0 +1,135 @@
+.App {
+  width: 900px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+/* Media */
+.Media {
+  padding-left: 107px;
+}
+
+
+/* Search */
+.Search {
+  padding: 40px 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.Search img {
+  width: 100px;
+}
+
+.Search input {
+  border: 2px solid #ffd85d;
+  width: 78%;
+  padding: 5px 11px;
+  margin-left: 10px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.Search button {
+  padding: 7px 20px;
+  border: none;
+  background: gold;
+  cursor: pointer;
+}
+
+/* Banner */
+.Banner {
+  padding-left: 107px;
+}
+
+.Banner img {
+  width: 88%;
+  display: block;
+  cursor: pointer;
+}
+
+/* Bottom Widgets */
+.BottomWidgets {
+  padding-left: 107px;
+  display: flex;
+  width: 95%;
+  flex-wrap: wrap;
+}
+
+.BottomWidgets > div {
+  padding: 20px;
+  box-sizing: border-box;
+  width: 33.3%;
+  font-size: 0.95rem;
+}
+
+.BottomWidgets a {
+  text-decoration: none;
+}
+
+.BottomWidgets ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+h5 {
+  margin: 7px 0;
+  font-size: 1.1rem;
+  color: #1e65b9;
+}
+
+/* Weather widget */
+.Weather img {
+  width: 50px;
+}
+
+.Weather div {
+  display: flex;
+  align-items: center;
+}
+
+.Weather span, .Weather ul {
+  padding-left: 8px;
+}
+
+.Weather span {
+  font-size: 1.8rem;
+}
+
+/* Broadcasting widget */
+span.Channel {
+  color: #aab;
+  margin-left: 7px;
+}
+
+.Broadcasting li {
+  display: flex;
+}
+
+.Broadcasting img {
+  padding-top: 3px;
+  padding-right: 6px;
+  width: 16px;
+  height: 16px;
+  opacity: 0.6;
+}
+
+/* Frequented widget */
+.Frequented li {
+  font-weight: 600;
+}
+
+.Frequented span {
+  font-weight: 400;
+}
+
+.Frequented span::before {
+  content: '– ';
+  margin-left: 6px;
+}
+
+/* TV Program */
+span.Time {
+  margin-right: 8px;
+}
