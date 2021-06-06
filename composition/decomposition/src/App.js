@@ -1,8 +1,19 @@
 import './App.css';
 import Banner from './components/Banner';
-import BottomWidget from './components/BottomWidget';
+import BottomWidgetAll from './components/BottomWidgetAll';
 import Media from './components/Media';
 import Search from './components/Search';
+
+const media =
+[
+  {icon: "./media/1.png", time: "13:50", title: "В России начали проверять надежность ядерного боезапаса"},
+  {icon: "./media/1.png", time: "14:24", title: "Российских школьников привлекли к тушению лесных пожаров"},
+  {icon: "./media/1.png", time: "14:15", title: "Новак сообщил сроки завершения строительства «Северного потока-2»"},
+  {icon: "./media/1.png", time: "14:11", title: "Российский гонщик попал в призы гонки «Формулы-2»"},
+  {icon: "./media/1.png", time: "14:04", title: "Силуанов рассказал о нервирующих его тратах бюджета"},
+  {icon: "./media/1.png", time: "14:03", title: "Украине посоветовали «вступить в борьбу» и не мешать «Северному потоку-2»"},
+  {icon: "./media/1.png", time: "13:58", title: "Зеленский лично пожарил шашлык для украинских журналистов"}
+]
 
 const bottomWidget = {
   Weather: [
@@ -31,31 +42,14 @@ function App() {
   return (
     <div className="App">
 
-      <Media/>
+      <Media data={media}/>
 
       <Search/>
 
       <Banner/>
 
-      <div className="BottomWidgets">
-        <BottomWidget name="Weather" data={bottomWidget}>
-            <img src="weather.png" alt=""/>
-            <span>+17°</span>
-        </BottomWidget>
+      <BottomWidgetAll data={bottomWidget}/>
 
-        <BottomWidget name="Map" data={bottomWidget} country="Tirol, Austria">
-        </BottomWidget>
-
-        <BottomWidget name="Broadcasting" data={bottomWidget} icon={'./32x32.png'}>
-        </BottomWidget>
-      
-        <BottomWidget name="Frequented" data={bottomWidget}>
-        </BottomWidget>
-
-        <BottomWidget name ="TV program" data={bottomWidget}>
-        </BottomWidget>
-
-      </div>
     </div>
   );
 }

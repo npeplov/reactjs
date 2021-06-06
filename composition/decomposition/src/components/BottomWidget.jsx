@@ -1,12 +1,13 @@
 import React from 'react'
 import {nanoid} from 'nanoid'
-import Icon from './BottomWidgets/Icon';
-import Time from './BottomWidgets/Time';
+import Icon from './Common/Icon';
+import Time from './Common/Time';
 import Channel from './BottomWidgets/Channel';
 import Subcategory from './BottomWidgets/Subcategory';
 
 export default function BottomWidget(props) {
   const {name, country, data, icon} = props;
+
   const link = '/';
 
   return (

@@ -9,10 +9,27 @@
   padding-left: 107px;
 }
 
+.Media ul {
+  list-style: none;
+  padding: 0;
+  font-size: 0.95rem;
+}
+
+.Media li {
+  display: flex;
+  align-items: flex-start;
+}
+
+.Media img {
+  width: 16px;
+  margin-right: 6px;
+  padding-top: 3px;
+}
 
 /* Search */
 .Search {
-  padding: 40px 0;
+  padding-top: 15px;
+  padding-bottom: 30px;
   display: flex;
   align-items: flex-start;
 }
