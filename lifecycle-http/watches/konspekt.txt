@@ -1,0 +1,10 @@
+https://github.com/netology-code/ra16-homeworks/tree/master/lifecycle-http/watches
+
+v 1. 2 инпута, кнопка
+
+v вывести часы в UTC
+v дивы с часами в флекс врапер
+
+2. Обновлять часы раз в секунду - setInterval 1000мс
+
+3. Удалять часы - удаление интервала
