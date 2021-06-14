@@ -1,0 +1,24 @@
+1. Обернуть:
+1000+ прочтений/просмотров - Popular
+до 100 - компонент New
+
+2. Используя HOC обернуть Video и Article чтобы
+при отображении в компоненте List они помещались внутрь требуемого компонента
+
+function Video(props) {
+    return (
+        <div className="item item-video">
+            <iframe src={props.url} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <p className="views">Просмотров: {props.views}</p>
+        </div>
+    )
+};
+
+function withHOC(Component) {
+  return function() {
+    
+  }
+}
+
+const prettyVideo = hocFunc(Video);
+const prettyArticle = hocFunc(Article);
