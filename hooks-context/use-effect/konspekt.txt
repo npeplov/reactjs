@@ -1,0 +1,4 @@
+1. onClick по List 
+- в Details передаются props: info (объект с полями id и name) 
+- начинается загрузка данных по адресу:
+...data/{id}.json, {id} - это id пользователя из props.
