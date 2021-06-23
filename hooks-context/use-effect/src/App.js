@@ -6,38 +6,46 @@ import Details from './components/Details';
 function App() {
   let [users, setUsers] = useState([]);
   let [activeUser, setActiveUser] = useState(null);
+  let [loading, setLoading] = useState(false);
 
-  // componentDidMoount
+  const fetchData = async (url) => {
+    setLoading(true);
+    const resolve = await fetch(url);
+    const response = await resolve.json();
+    setLoading(false);
+    return response;
+  }
+
   useEffect(() => {
-    fetch('https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/hooks-context/use-effect/data/users.json')
-      .then((resolve) => resolve.json())
-      .then((response) => setUsers(response));
+    fetchData('https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/hooks-context/use-effect/data/users.json')
+    .then((response) => setUsers(response));
     },
   [])
 
-  
+  const getUserDetails = (user) => {
+    fetchData(
+      `https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/hooks-context/use-effect/data/${user.id}.json`,
+      user
+    ).then((response) => setActiveUser(response));
+  }
+
+  // осталось ref
+
   return (
     <div className="App">
+
       <div>
         <ul>
           {users.map((item) => (
-            <List
-              item={item}
-              callback={(user) => {
-                // начинается загрузка данных по адресу:
-                fetch(`https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/hooks-context/use-effect/data/${user.id}.json`)
-                .then((resolve) => resolve.json())
-                .then((response) => setActiveUser(response))
-                // .then(console.log(activeUser));
-              }}
-              key={item.id}
-            />
+            <List item={item} callback={getUserDetails} key={item.id} />
           ))}
         </ul>
       </div>
+
       <div>
-        <Details user={activeUser}/>
+        {loading ? <div>Loading...</div> : <Details user={activeUser}/>}
       </div>
+
     </div>
   );
 }
