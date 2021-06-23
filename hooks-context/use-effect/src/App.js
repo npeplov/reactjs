@@ -29,7 +29,7 @@ function App() {
     ).then((response) => setActiveUser(response));
   }
 
-  // осталось ref
+  // осталось ref добавить
 
   return (
     <div className="App">
