@@ -4,7 +4,7 @@ import List from './components/List';
 import Details from './components/Details';
 
 function App() {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState(null);
   const [selectedUser, setSelectedUser] = useState({id: null});
   const [loading, setLoading] = useState(false);
   const userIdRef = useRef();
@@ -18,7 +18,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetchData('https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/hooks-context/use-effect/data/users.json')
+    fetchData(`${process.env.REACT_APP_BASEURL}/users.json`)
     .then((response) => setUsers(response));
     },
   [])
@@ -27,7 +27,7 @@ function App() {
     userIdRef.current = user.id;
     if (userIdRef.current !== selectedUser.id)
       fetchData(
-        `https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/hooks-context/use-effect/data/${user.id}.json`,
+        `${process.env.REACT_APP_BASEURL}/${user.id}.json`,
         user
       ).then((response) => setSelectedUser(response));
   }
@@ -38,7 +38,7 @@ function App() {
 
       <div className="List">
         <ul>
-          {users.map((item) => (
+          {users && users.map((item) => (
             <List item={item} callback={getUserDetails} key={item.id} />
           ))}
         </ul>
