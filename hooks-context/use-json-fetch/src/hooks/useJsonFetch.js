@@ -20,7 +20,6 @@ export default function  useJsonFetch(url) {
     }
     catch(e) {
       setError(e.toString())
-      // console.log(e.toString());
     }
     finally {
       setLoading(false)
