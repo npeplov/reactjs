@@ -1,14 +1,12 @@
 import React, {} from 'react'
-import Loading from './Loading'
-import Data from './Data';
-import Error from './Error'
+import Common from './Common';
 
 export default function Main() {
   return (
     <>
-      <Loading url='http://localhost:7070/loading'/>
-      <Data url='http://localhost:7070/data'/>
-      <Error url='http://localhost:7070/error'/>
+      <Common url='http://localhost:7070/loading'/>
+      <Common url='http://localhost:7070/data'/>
+      <Common url='http://localhost:7070/error' className="Error" />
     </>
   )
 }
