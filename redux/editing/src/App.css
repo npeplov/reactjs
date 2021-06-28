@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1vmin);
+  color: #ddd;
+}
+
+ul {
+  list-style: none;
+  display: table;
+  padding-left: 0;
+}
+
+li {
+  display: table-row;
+}
+
+li div {
+  border: 1px solid #777;
+  display: table-cell;
+  padding: 5px 20px;
+}

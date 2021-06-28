@@ -1,0 +1,15 @@
+https://stackblitz.com/edit/react-9xjeab-redux-finish
+https://github.com/npeplov/ra16-homeworks/tree/master/redux/editing
+
+v 1. получить список из store.
+v 2. кнопка save
+v 3. кнопка удаления
+по клику диспач редюсер
+4. кнопка редактировать:
+  передать id
+  в форм отобразить item.value 
+
+Reducers:
+  serviceList: добавление, удаление сервисов
+  serviceAdd: отвечает за форму.
+  Обычно форму не выносят в редакс
