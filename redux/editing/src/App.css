@@ -29,3 +29,15 @@ li div {
   display: table-cell;
   padding: 5px 20px;
 }
+
+.List button {
+  margin: 0 2px;
+  cursor: pointer;
+  padding: 1px 2px;
+  opacity: 0.8;
+}
+
+.List button:hover {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
