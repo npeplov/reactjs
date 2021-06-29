@@ -14,7 +14,7 @@ export default function serviceListReducer(state = initialState, action) {
     case 'REMOVE_SERVICE':
       const id = action.payload;
       return state.filter(item => item.id !== id)
-    case 'UPDATE':
+    case 'UPDATE_SERVICE':
       const service = action.payload
       const immutable = state.filter(item => item.id !== service.id)
       return [...immutable, service]
