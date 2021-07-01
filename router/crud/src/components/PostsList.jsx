@@ -1,29 +1,29 @@
-import React from 'react'
+import React, {useContext, useEffect} from 'react'
 import {Link} from 'react-router-dom'
-import { useEffect, useState } from 'react';
+import ContentContext from '../context/ContentContext';
 
 export default function PostsList() {
+  const [posts, setPosts] = useContext(ContentContext);
 
-  const [posts, setPosts] = useState([]);
-  useEffect(() => {
-    const getFetch = (url) => {
-      fetch(url).then((response) => response.json())
-      .then(response => setPosts(response))
-    }
-    getFetch('http://localhost:7777/posts')
-  }, [])
+  useEffect(()=> {
+  const getFetch = (url) => {
+    fetch(url).then((response) => response.json())
+    .then(response => setPosts(response))
+  }
+  getFetch('http://localhost:7777/posts')
+  }, [setPosts])
+  
+  // console.log(posts);
 
-  return (
-    <div>
-      <button><Link to="/posts/new">Создать пост</Link></button>
-      <ul>
-        {posts.map((post) => (
-          <li key={post.id}>
-            Дата: {post.created.toString()}
-            <p><Link to={`/posts/${post.id}`}>{post.content}</Link></p>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
+  if (posts && posts.length) return (
+    <ul>
+      {posts.map((post) => (
+        <li key={post.id}>
+          Дата: {post.created}
+          <p><Link to={`/posts/${post.id}`}>{post.content}</Link></p>
+        </li>
+      ))}
+    </ul>
+    )
+  return null
 }

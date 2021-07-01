@@ -3,6 +3,31 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 10px;
+}
+
+nav {
+  background-color: #333;
+  padding: 10px;
+  min-width: 295px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+nav a {
+  display: block;
+  margin: 0 10px;
+  color: #aaa;
+  text-decoration: none;
+}
+
+.btn {
+  border: 1px solid #eee;
+  padding: 3px 10px;
+  background: #777;
+  color: #eee;
 }
 
 ul {
@@ -12,11 +37,17 @@ ul {
 li, .App div {
   list-style: none;
   border: 1px solid #aaa;
-  margin: 5px;
-  padding: 20px;
-  min-width: 200px;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  background: #fff;
 }
 
-button {
+.App > div {
+  min-width: 295px;
+  background: #eee;
+  padding: 10px 20px;
+}
+
+form button {
   display: block;
 }

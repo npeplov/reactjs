@@ -1,20 +1,17 @@
 import { useState } from "react"
+import {Redirect} from 'react-router-dom'
 import React from 'react'
+import axios from "axios"
 
 export default function NewPost({history}) {
   const [content, setcontent] = useState('')
-
-  const postFetch = (url) => {
-    fetch(url, {
-      method: 'POST',
-      body: JSON.stringify({id: 0, content})
-    })
-  }
+  const [response, setResponse] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    postFetch('http://localhost:7777/posts');
-    history.go(-1)
+    const url = 'http://localhost:7777/posts'
+    axios.post(url, { id: 0, content })
+    .then(resp => setResponse(resp))
   }
 
   const handleChange = (e) => {
@@ -22,13 +19,15 @@ export default function NewPost({history}) {
     setcontent(value)
   }
 
-  return (
-    <div>
-      {/* <Redirect to="/posts"/> */}
-      <form onSubmit={handleSubmit}>
-        <textarea onChange={handleChange} value={content} name="" id="" cols="24" rows="3" placeholder="Введите текст нового поста"></textarea>
-        <button type="submit">Опубликовать</button>
-      </form>
-    </div>
-  )
+  if (!response)
+    return (
+      <div>
+        <form onSubmit={handleSubmit}>
+          <textarea onChange={handleChange} value={content} cols="24" rows="3" placeholder="Введите текст нового поста"></textarea>
+          <button type="submit">Опубликовать</button>
+        </form>
+      </div>
+    )
+
+  return (<Redirect to="/"/>)
 }
