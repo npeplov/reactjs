@@ -1,0 +1,22 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+ul {
+  padding: 0;
+}
+
+li, .App div {
+  list-style: none;
+  border: 1px solid #aaa;
+  margin: 5px;
+  padding: 20px;
+  min-width: 200px;
+}
+
+button {
+  display: block;
+}
